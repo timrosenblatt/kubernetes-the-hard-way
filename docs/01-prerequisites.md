@@ -14,6 +14,8 @@ This tutorial leverages the [Google Cloud Platform](https://cloud.google.com/) t
 
 Follow the Google Cloud SDK [documentation](https://cloud.google.com/sdk/) to install and configure the `gcloud` command line utility.
 
+For OSX you can use `brew install google-cloud-sdk --cask` and [doing a few other minor changes](https://jansutris10.medium.com/install-google-cloud-sdk-using-homebrew-on-mac-2952c9c7b5a1).
+
 Verify the Google Cloud SDK version is 338.0.0 or higher:
 
 ```

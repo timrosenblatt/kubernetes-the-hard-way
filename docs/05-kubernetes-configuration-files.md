@@ -26,6 +26,10 @@ When generating kubeconfig files for Kubelets the client certificate matching th
 
 Generate a kubeconfig file for each worker node:
 
+!! The first time I ran this (with a much more recent version of kubectl) I got a bunch of versioner.go "invalid configuration: no configuration has been provided" errors but the files were created...I wondered if that had something to do with the files not being there the first time, so I re-ran the whole for loop and the file messages went away. I got different messages about the remote k8s server being unreachable. Re-running a third time had the same message as the 2nd time so nothing else there.
+
+This at least makes sense, b/c the infra is there, but we haven't provisioned anything yet, so nothing is listening on the other end. That all makes sense. All the kubeconfig files look fine.
+
 ```
 for instance in worker-0 worker-1 worker-2; do
   kubectl config set-cluster kubernetes-the-hard-way \

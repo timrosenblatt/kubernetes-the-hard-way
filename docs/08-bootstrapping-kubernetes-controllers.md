@@ -67,6 +67,14 @@ REGION=$(curl -s -H "Metadata-Flavor: Google" \
   http://metadata.google.internal/computeMetadata/v1/project/attributes/google-compute-default-region)
 ```
 
+!!! The above command probably did not work. Thanks to https://github.com/kelseyhightower/kubernetes-the-hard-way/issues/659#issuecomment-835844794 a replacement command is...
+
+```
+REGION=$(curl -s -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/zone | cut -d/ -f 4 | sed 's/.\{2\}$//')
+```
+
+
+
 ```
 KUBERNETES_PUBLIC_ADDRESS=$(gcloud compute addresses describe kubernetes-the-hard-way \
   --region $REGION \

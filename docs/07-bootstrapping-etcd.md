@@ -125,4 +125,7 @@ f98dc20bce6225a0, started, controller-0, https://10.240.0.10:2380, https://10.24
 ffed16798470cab5, started, controller-1, https://10.240.0.11:2380, https://10.240.0.11:2379, false
 ```
 
+!! The setup all worked perfectly but I am surprised about one thing...
+The output shown above is _identical_ to mine. Both are in the same order 2,0,1, and they also have the exact same member id hashes. A quick google about etc member naming conventions landed me on https://stackoverflow.com/questions/63433622/is-the-following-output-of-etcdctl-member-list-correct-and-etcd-cluster-is-in where the person asking the question _also has the exact same output_ regardless of wihch host I run the member list command on, every time. I guess I can accept that the 2,0,1 ordering is a one-in-6 chance of the sequence that the processes booted, but the hashes have a much lower collision rate....It's too short to be an md5, it's not a truncated version of `echo "controller-2" | md5` ...
+
 Next: [Bootstrapping the Kubernetes Control Plane](08-bootstrapping-kubernetes-controllers.md)

@@ -207,6 +207,8 @@ kube-controller-manager.pem
 
 Generate the `kube-proxy` client certificate and private key:
 
+The CNs and Os of all the certs are named based on [K8s conventions](https://kubernetes.io/docs/setup/best-practices/certificates/#configure-certificates-for-user-accounts)
+
 ```
 {
 

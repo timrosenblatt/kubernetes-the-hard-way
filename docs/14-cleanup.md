@@ -57,6 +57,8 @@ Delete the `kubernetes-the-hard-way` network VPC:
 
 Delete the `kubernetes-the-hard-way` compute address:
 
+This did not work for me. I think we already deleted it farther up under the "Networking" heading. You can verify this with `gcloud compute addresses list --filter="name=('kubernetes-the-hard-way')"` which is the exact command originally used for verification when we originally created the static IP.
+
 ```
 gcloud -q compute addresses delete kubernetes-the-hard-way \
   --region $(gcloud config get-value compute/region)

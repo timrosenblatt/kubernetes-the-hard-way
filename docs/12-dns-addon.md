@@ -10,6 +10,8 @@ Deploy the `coredns` cluster add-on:
 kubectl apply -f https://storage.googleapis.com/kubernetes-the-hard-way/coredns-1.8.yaml
 ```
 
+!!! This doesn't work. https://github.com/kelseyhightower/kubernetes-the-hard-way/issues/737#issuecomment-1572460425 shows a workaround...
+
 > output
 
 ```
